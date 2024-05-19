@@ -45,7 +45,8 @@ class Linkedlist():
     while current_node.next:
       if current_node.next.value == value:
         current_node.next = current_node.next.next
-        return 'deleted succefully'
+        print(self.__str__())
+        return 
      
       current_node = current_node.next
       
@@ -56,15 +57,25 @@ class Linkedlist():
       while current:
         elements.append(str(current.value))
         current = current.next
-      return ' -> '.join(elements) + " -> None"
+      return "["+','.join(elements) + "]"
     
 my_list = Linkedlist()
 my_list.append(10)
 my_list.append(20)
 my_list.append(30)
 my_list.append(40)
+my_list.append(50)
+my_list.append(60)
+my_list.append(70)
+my_list.append(90)
+my_list.append(100)
 
 
 print(my_list)
+
+my_list.delete(30)
+my_list.delete(100)
+
+
 
     
