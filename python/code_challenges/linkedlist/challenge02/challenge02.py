@@ -11,6 +11,7 @@ class Linkedlist:
     
     
   def append(self,value):
+    """Append a new node with the given data to the end of the linked list."""
     new_node = Node(value)
     
     if self.head is None:
@@ -36,6 +37,7 @@ class Linkedlist:
     return counter  
      
   def middle(self):
+    ''' return the middel node in agive list, if the list is even , it will return me the second of the two middle node'''
     if self.head == None:
       raise AttributeError('empty list')
     def len():
@@ -97,11 +99,12 @@ class Linkedlist:
       return "["+','.join(elements) + "]"
   
 
-my_list = Linkedlist()
+
+# try the following code :
+# my_list = Linkedlist()
 # my_list.append(1)
 # my_list.append(2)
 # my_list.append(3)
-# my_list.append(4)
 
-print(my_list.middle())
+# print(my_list.middle())
   
