@@ -36,6 +36,8 @@ class Linkedlist:
     return counter  
      
   def middle(self):
+    if self.head == None:
+      raise AttributeError('empty list')
     def len():
       counter = 1
       current_node = self.head
@@ -62,7 +64,7 @@ class Linkedlist:
     
   
     
-    print(get_item(find_middle_index()))
+    return(get_item(find_middle_index()))
     
     
     
@@ -95,5 +97,11 @@ class Linkedlist:
       return "["+','.join(elements) + "]"
   
 
+my_list = Linkedlist()
+# my_list.append(1)
+# my_list.append(2)
+# my_list.append(3)
+# my_list.append(4)
 
+print(my_list.middle())
   
