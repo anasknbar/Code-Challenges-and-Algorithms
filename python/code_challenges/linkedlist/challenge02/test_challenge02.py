@@ -1,3 +1,5 @@
+
+
 # Write your test here
 from challenge02 import Node,Linkedlist
 
@@ -28,3 +30,4 @@ def test_even_list():
   expected_middle_node = my_list.middle()
   
   assert actual_middle_node == expected_middle_node
+
