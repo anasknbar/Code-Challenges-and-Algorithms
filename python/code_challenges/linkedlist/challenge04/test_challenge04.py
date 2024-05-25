@@ -1,4 +1,5 @@
 # Write your test here
+
 from challenge04 import LinkedList,Node
 import pytest
 
@@ -32,4 +33,3 @@ def test_empty_list():
   
   
   with pytest.raises(AttributeError):
-    my_list.reverse()

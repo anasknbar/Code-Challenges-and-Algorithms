@@ -4,23 +4,6 @@ class Node:
     self.value = value
     self.next = None
     
-class LinkedList:
-  def __init__(self):
-    self.head = None
-    
-  def append(self,value): 
-    """Append a new node with the given data to the end of the linked list."""
-    
-    new_node = Node(value) 
- 
-    if self.head is None:
-      self.head = new_node
-      return 
-    
-    last_node = self.head
-    while last_node.next:
-      last_node = last_node.next
-    last_node.next = new_node 
   def __len__(self):
     """return the length of the list"""
     if self.head is None:
@@ -89,3 +72,18 @@ class LinkedList:
 # my_list.append(5)
 
 # print(my_list.reverse())
+
+  
+
+    
+    
+    
+      
+    
+    
+    
+    
+    
+  
+
+
