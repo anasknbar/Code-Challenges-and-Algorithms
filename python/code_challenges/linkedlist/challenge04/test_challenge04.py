@@ -21,10 +21,10 @@ def test_linked_list_with_multiple_node():
   my_list.append(4)
   my_list.append(5)
   
-  # before reversing the list  >  head = 1
-  # after  reversing the list  >  head = 5
+  linked_list_before_reversing = "[1, 2, 3, 4, 5]"
+  linked_list_after_reversing =  "[5, 4, 3, 2, 1]"
   
-  assert my_list.reverse() == 5
+  assert (my_list.reverse()) == linked_list_after_reversing
   
   
 def test_empty_list():

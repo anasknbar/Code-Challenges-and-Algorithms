@@ -32,22 +32,30 @@ class Node:
       current_node = current_node.next
       
   def reverse(self):
+    '''return reversed linked list. i.e: [1,2,3] >> [3,2,1]'''
+    reversed_linked_list =  LinkedList()
+    stack = []
     if self.head is None:
        raise AttributeError('list is empty')
      
     if self.head.next is None: 
        return self.head.value
      
-    curr = self.head
-    prev = None
+    current_node = self.head
      
-    while curr:
-        temp = curr.next
-        curr.next = prev
-        prev = curr
-        curr = temp
+    while current_node:
+      stack.insert(0,current_node.value)
+      current_node = current_node.next
+    
+   
+    for value in stack:
+      reversed_linked_list.append(value)
+    return str(reversed_linked_list)
+  
+  
+
       
-    return prev.value # return the new head of the reversed list.
+    
     
        
      
@@ -60,16 +68,10 @@ class Node:
       while current:
         elements.append(str(current.value))
         current = current.next
-      return "["+','.join(elements) + "]"
+      return "["+', '.join(elements) + "]"
     
-### try the following:    
-# my_list = LinkedList()
 
-# my_list.append(1)
-# my_list.append(2)
-# my_list.append(3)
-# my_list.append(4)
-# my_list.append(5)
+
 
 # print(my_list.reverse())
 
