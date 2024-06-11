@@ -1,6 +1,6 @@
 # Write your test here
 
-from challenge04 import LinkedList,Node
+from challenge04 import LinkedList
 import pytest
 
 
@@ -27,9 +27,4 @@ def test_linked_list_with_multiple_node():
   assert (my_list.reverse()) == linked_list_after_reversing
   
   
-def test_empty_list():
-  my_list = LinkedList()
 
-  
-  
-  with pytest.raises(AttributeError):
