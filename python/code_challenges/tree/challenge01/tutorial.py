@@ -19,57 +19,56 @@ b.right = e
 c.left = f
 
 #  ----- Depth First Values Algo -----
-### iterative version:
-# def depth_first_values(root):
+def depth_first_values_iterative(root):
+  if root is None:
+    return []
   
-#   if root is None:
-#     return []
-#   else:
-#     results = []
-#     stack = [root]
-    
-#     while len(stack):
-#       current_node = stack.pop()
-#       results.append(current_node.value)
-      
-#       if current_node.right:
-#         stack.append(current_node.right)
-#       if current_node.left:
-#         stack.append(current_node.left)
-    
-#   return results    
-# print(depth_first_values(a))
-
-### recursive version:
-# def depth_first_values(root):
-#   if root is None:
-#     return []
-#   else:
-#     left_values  = depth_first_values(root.left)
-#     right_values = depth_first_values(root.right)
-#   return [root.value,*left_values,*right_values]
-# print(depth_first_values(a))
-
-
-#  ----- Breadth First Values Algo -----
-
-def breadth_first_values(root):
   results = []
-  queue = [root]
+  stack = [root]
+  
+  while len(stack):
+    current_node = stack.pop()
+    results.append(current_node.value)
+    
+    if current_node.right:
+      stack.append(current_node.right)
+    if current_node.left:
+      stack.append(current_node.left)
+    
+  return results
+def depth_first_values_recursive(root):
   
   if root is None:
     return []
   else:
-    while len(queue):
-      cuurent_node = queue.pop(0)
-      results.append(cuurent_node.value)
+    left_values  = depth_first_values_recursive(root.left)
+    right_values = depth_first_values_recursive(root.right)
+  return [root.value,*left_values,*right_values]
+
+
+
+
+#  ----- Breadth First Values Algo -----
+def breadth_first_values_iterative(root):
+  results = []
+  queue = [root]
+  if queue is None:
+    return []
+  while len(queue):
+    current_node = queue.pop(0)
+    results.append(current_node.value)
+    
+    if current_node.left:
+      queue.append(current_node.left)
+    if current_node.right:
+      queue.append(current_node.right)
       
-      if cuurent_node.left:
-        queue.append(cuurent_node.left)
-      if cuurent_node.right:
-        queue.append(cuurent_node.right)
-  return results  
-print(breadth_first_values(a))
+  return results
+
+def breadth_first_values_recursive(root):
+  # we can not use recursion to traverse the tree using the breadth_first_values. 
+  # because under the hood recursion use stack and breadth_first_values_ need queus to be implemented. 
+  pass
       
 
 
